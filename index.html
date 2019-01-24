@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>夏培鑫</title>
-</head>
-   <script src="https://cdn.bootcss.com/vue/2.5.22/vue.js"></script>
-    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/css/bootstrap.css" rel="stylesheet">
-    <link href="https://cdn.bootcss.com/animate.css/3.7.0/animate.css" rel="stylesheet">
-<body>
+  </head>
+  <script src="https://cdn.bootcss.com/vue/2.5.22/vue.js"></script>
+  <link
+    href="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/css/bootstrap.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.bootcss.com/animate.css/3.7.0/animate.css"
+    rel="stylesheet"
+  />
+  <body>
     <div id="app">
-       
-        <h1>hello !</h1>
+      <transition
+        enter-active-class="bounceIn"
+        leave-active-class="hinge"
+        :duration="{enter :200 ,leave:400}"
+      >
+        <h1 v-if="flag">{{ title }}</h1>
+      </transition>
+
+      <p class="text-center h5">{{ text }}</p>
+
+      <button type="button" class="btn btn-success" @click="flag=!flag">
+        Success
+      </button>
     </div>
-</body>
-<script>
-  
-</script>
+  </body>
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        title: "hello !",
+        flag: true,
+        text:
+          "如果你能看到这个,你会发现这里几乎没人;我使用github的功能制作了这个网站,感谢他们; 我的QQ是1018866480; 希望可以和" +
+          "更多的,更广泛的程序设计者交流,感受他们的思想"
+      },
+      methods: {}
+    });
+  </script>
 </html>
