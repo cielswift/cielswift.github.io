@@ -1,62 +1,215 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>夏培鑫</title>
-  </head>
-  <script src="https://cdn.bootcss.com/vue/2.5.22/vue.js"></script>
-  <link
-    href="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/css/bootstrap.css"
-    rel="stylesheet"
-  />
-  <link
-    href="https://cdn.bootcss.com/animate.css/3.7.0/animate.css"
-    rel="stylesheet"
-  />
-  
-  <style>
-    body {
-        width: 35em;
-        margin: 0 auto;
-        font-family: Tahoma, Verdana, Arial, sans-serif;
-		background-color:cornflowerblue;
-        font-size: 30px;
-    }
-</style>
-  
-  <body>
-    <div id="app">
-      <transition
-        enter-active-class="bounceIn"
-        leave-active-class="hinge"
-        :duration="{enter :400 ,leave:300}"
-      >
-        <h1 v-if="flag">{{ title }}</h1>
-      </transition>
+<html lang="zh-CN">
 
-      <p class="text-center h5">{{ text }}</p>
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>夏培鑫</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <style>
+          :root {
+               --primary-color: #2c3e50;
+               --secondary-color: #3498db;
+               --text-color: #000000;
+          }
 
-    </div>
+          body {
+               margin: 0;
+               padding: 0;
+               font-family: 'Arial', sans-serif;
+               background: linear-gradient(135deg, #667eea, #114e50);
+               /* 修改了这里的渐变颜色 */
+               color: var(--text-color);
+          }
 
-    <div> 2019-04-05 PM_13_37 开始对人生感到迷茫,总是不开心,想到过去错过了很多,遗憾;没有女朋友.孤独一人,无休止的加班;
-    从未如果强烈的感觉 我不属于这里;
-    </div>
+          .container {
+               max-width: 800px;
+               margin: auto;
+               padding: 20px;
+          }
 
-  </body>
-  <script>
-    var app = new Vue({
-      el: "#app",
-      data: {
-        title: "hello !",
-        flag: false,
-        text:
-          "如果你能看到这个,你会发现这里几乎没人;我使用github的功能制作了这个网站,感谢他们; 希望可以和" +
-          "更多的,更广泛的程序设计者交流,感受他们的思想"
-      },
-      methods: {},
-      mounted:function(){
-	      	this.flag=true;
-	      }    
-    });
-  </script>
+          header {
+               text-align: center;
+               padding: 20px 0;
+          }
+
+          header h1 {
+               font-size: 2.5em;
+               margin-bottom: 0.5em;
+          }
+
+          nav ul {
+               list-style: none;
+               padding: 0;
+               display: flex;
+               justify-content: center;
+          }
+
+          nav ul li {
+               margin: 0 10px;
+          }
+
+          nav ul li a {
+               color: var(--text-color);
+               text-decoration: none;
+               transition: color 0.3s ease;
+          }
+
+          nav ul li a:hover {
+               color: var(--secondary-color);
+          }
+
+          section {
+               margin-top: 50px;
+          }
+
+          .section-title {
+               font-size: 2em;
+               margin-bottom: 20px;
+          }
+
+          .skills ul {
+               list-style: none;
+               padding: 0;
+          }
+
+          .skills ul li {
+               margin: 10px 0;
+          }
+
+          .skills ul li::before {
+               content: "\f00c";
+               font-family: FontAwesome;
+               margin-right: 10px;
+               color: var(--secondary-color);
+          }
+
+          .portfolio ul {
+               list-style: none;
+               padding: 0;
+          }
+
+          .portfolio ul li {
+               margin: 20px 0;
+          }
+
+          .portfolio ul li a {
+               color: var(--secondary-color);
+               text-decoration: none;
+          }
+
+          .portfolio ul li a:hover {
+               text-decoration: underline;
+          }
+
+          .contact-info ul {
+               list-style: none;
+               padding: 0;
+          }
+
+          .contact-info ul li {
+               margin: 10px 0;
+          }
+
+          .contact-info ul li i {
+               margin-right: 10px;
+               color: var(--secondary-color);
+          }
+
+          footer {
+               text-align: center;
+               padding: 20px 0;
+          }
+
+          @keyframes fadeIn {
+               from {
+                    opacity: 0;
+               }
+
+               to {
+                    opacity: 1;
+               }
+          }
+
+          .animate-fade-in {
+               animation: fadeIn 1s ease-out both;
+          }
+     </style>
+</head>
+
+<body>
+
+     <header class="animate-fade-in">
+          <div class="container">
+               <h1>夏培鑫</h1>
+               <p>JavaWeb C/C++嵌入式</p>
+          </div>
+     </header>
+
+     <nav class="animate-fade-in">
+          <div class="container">
+               <ul>
+                    <li><a href="#about">关于我</a></li>
+                    <li><a href="#skills">技能</a></li>
+                    <li><a href="#portfolio">作品集</a></li>
+                    <li><a href="#contact">联系方式</a></li>
+               </ul>
+          </div>
+     </nav>
+
+     <main>
+          <section id="about" class="animate-fade-in">
+               <div class="container">
+                    <h2 class="section-title">关于我</h2>
+                    <p>大家好, 我是夏培鑫, 一名JavaWeb开发者. 我热衷于服务端以及嵌入式的开发.</p>
+               </div>
+          </section>
+
+          <section id="skills" class="animate-fade-in">
+               <div class="container">
+                    <h2 class="section-title">技能</h2>
+                    <ul class="skills">
+                         <li>Java &amp; spring &amp; netty &amp; openresty </li>
+                         <li>C/C++ &amp; stm32 &amp; 8051 </li>
+                         <li>Groovy/Lua &amp; 服务端脚本</li>
+                    </ul>
+               </div>
+          </section>
+
+          <section id="portfolio" class="animate-fade-in">
+               <div class="container">
+                    <h2 class="section-title">作品集</h2>
+                    <ul class="portfolio">
+                         <li><a href="https://github.com/cielswift/cnet.git">cnet: c++实现的基于epoll机制的网络库</a></li>
+                         <li><a href="https://github.com/cielswift/">xzcensor: java实现的风控基础中间件</a></li>
+                    </ul>
+               </div>
+          </section>
+
+          <section id="contact" class="animate-fade-in">
+               <div class="container">
+                    <h2 class="section-title">联系方式</h2>
+                    <ul class="contact-info">
+                         <li><i class="fas fa-envelope"></i><a href="mailto:15966504931@163.com">15966504931@163.com</a>
+                         </li>
+                         <li><i class="fab fa-github"></i><a href="https://github.com/cielswift/">@cielswift</a></li>
+                         </li>
+                    </ul>
+               </div>
+          </section>
+     </main>
+
+     <footer class="animate-fade-in">
+          <div class="container">
+               <pre><code class="language-cpp">
+          <p>
+          std::cout << "学习 思考 实践" << std::endl;
+          </p>
+          </code></pre>
+
+          </div>
+     </footer>
+
+</body>
+
 </html>
